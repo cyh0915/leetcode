@@ -1,0 +1,22 @@
+char * longestCommonPrefix(char ** strs, int strsSize){
+    int i,j,k;
+   int a1 = 0;
+   int flag = 0;
+   if(strlen==0)//如果字符串长度为0，输出空字符
+      return "";
+for(j = 0;j<strlen(strs[0]);j++)//记录第一个字符串的长度
+{
+    for(i = 0;i<strsSize;i++)
+    {
+        if(strs[0][j]!=strs[i][j])//如果不等于的话
+        {
+           flag = 1;//记录已经找到前缀
+           strs[0][j] = '\0';//把休止符放到找到的坐标上
+           break;
+        }
+    }
+    if(flag == 1)//找到就跳出循环
+    break;
+}
+return strs[0];//将已经做好休止符的字符串输出即可
+}
