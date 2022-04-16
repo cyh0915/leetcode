@@ -1,0 +1,19 @@
+int removeDuplicates(int* nums, int numsSize){
+int left=0,right=1;
+if(numsSize==0)
+{
+    return 0;
+}
+while(right<numsSize)
+{
+    if(nums[left]!=nums[right])
+    {
+        left++;
+        nums[left] = nums[right];
+    }
+    right++;
+}
+
+return left+1;
+}
+//利用双指针法，右指针不断往右移，遇到相同的就不管，遇到不同的就把左指针往右移动一位，再进行交换
